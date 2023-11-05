@@ -26,6 +26,10 @@ const transporter = nodemailer.createTransport({
   secure: true,
 });
 
+app.get("/",(req,res)=>{
+  res.send(email.substring(0,3)+" "+pass_key.substring(0,4));
+})
+
 app.post("/faculty_slot_cancel_mail", (req, res) => {
   const t_name=req.query.t_name;
   const s_mail=req.query.s_email;
