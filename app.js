@@ -2,16 +2,19 @@ const express = require("express");
 const cors=require("cors");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const dotenv=require("dotenv");
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const config=require("./config");
+// const config=require("./config");
 
-const email=config.email;
-const pass_key=config.pass_code;
+const email=process.env.EMAIL;
+const pass_key=process.env.PASS_CODE;
 
 const transporter = nodemailer.createTransport({
   port: 465,
