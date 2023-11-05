@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const config=require("./config");
 
 const email=config.email;
-const pass_key=config.pass_key;
+const pass_key=config.pass_code;
 
 const transporter = nodemailer.createTransport({
   port: 465,
